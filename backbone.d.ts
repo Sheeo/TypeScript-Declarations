@@ -80,6 +80,11 @@ declare module Backbone {
 
         static extend: any;
     }
+    export module Events {
+        export function on(event: string, callback: (model: any, error: any) => any, context?): void;
+        export function off(event: string, callback: (model, error) => any, context?): void;
+        export function trigger(event: string, data: any): void;
+    }
     export interface History {
         start(options?): bool;
     }
