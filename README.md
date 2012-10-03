@@ -1,6 +1,7 @@
-TypeScript-BackboneJS-Declaration
+TypeScript-Declarations
 =================================
 
-Backbone.js TypeScript Declaration
+TypeScript declarations for Backbone.js and Underscore.js.
 
-Mostly extracted from TypeScript samples: http://typescript.codeplex.com/SourceControl/changeset/view/d397c54a55db#samples%2ftodomvc%2fjs%2ftodos.ts
+
+Very incomplete as of now.
