@@ -41,6 +41,7 @@ DEALINGS IN THE SOFTWARE.
 
 declare module Backbone {
     export class Model {
+        attributes: any;
         constructor (attr? , opts? );
         get(name: string): any;
         set(name: string, val: any): void;
@@ -48,21 +49,31 @@ declare module Backbone {
         save(attr? , opts? ): void;
         destroy(): void;
         bind(ev: string, f: Function, ctx?: any): void;
+        id;
+        isNew(): bool;
         toJSON(): any;
     }
+    export interface CollectionFetchCallback {
+        success?: (collection:Collection, response) => void;
+        error?: (collection:Collection, response) => void;
+    }
     export class Collection {
+        add(models, options? ): void;
         constructor (models? , opts? );
         bind(ev: string, f: Function, ctx?: any): void;
+        unbind(ev: string, f: Function, ctx?: any): void;
         collection: Model;
         length: number;
         create(attrs, opts? ): Collection;
         each(f: (elem: any) => void ): void;
-        fetch(opts?: any): void;
+        models: any[];
+        fetch(opts?: CollectionFetchCallback): void;
         last(): any;
         last(n: number): any[];
         filter(f: (elem: any) => any): Collection;
         without(...values: any[]): Collection;
         get(id);
+        toJSON(): any;
     }
     export class Router {
     }
