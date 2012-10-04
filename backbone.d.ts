@@ -62,6 +62,7 @@ declare module Backbone {
         last(n: number): any[];
         filter(f: (elem: any) => any): Collection;
         without(...values: any[]): Collection;
+        get(id);
     }
     export class Router {
     }
@@ -70,7 +71,6 @@ declare module Backbone {
         $(selector: string): any;
         el: HTMLElement;
         $el: any;
-        model: Model;
         remove(): void;
         delegateEvents: any;
         make(tagName: string, attrs? , opts? ): View;
